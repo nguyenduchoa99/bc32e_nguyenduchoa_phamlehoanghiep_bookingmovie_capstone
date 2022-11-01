@@ -21,6 +21,7 @@
     "redux": "^4.2.0",
     "sass": "^1.55.0",
     "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.6.5",
     "swiper": "^8.4.4",
     "web-vitals": "^2.1.4"
   },

@@ -1,8 +1,20 @@
-import React from 'react'
-import { useRoutes } from 'react-router-dom'
+import React from 'react';
+import { useRoutes } from 'react-router-dom';
 import MainLayout from '../components/MainLayout/MainLayout'
 import AuthLayout from '../components/AuthLayout/AuthLayout';
-import AdminLayout from  '../components/AdminLayout/AdminLayout';
+import AdminLayout from '../components/AdminLayout/AdminLayout';
+import Login from '../modules/Authentication/pages/Login';
+import Register from '../modules/Authentication/pages/Register';
+import MovieList from '../modules/Admin/pages/AdminMovie/MovieList';
+import AddMovie from '../modules/Admin/pages/AdminMovie/AddMovie';
+import EditMovie from '../modules/Admin/pages/AdminMovie/EditMovie';
+import AddShowTimes from '../modules/Admin/pages/AdminMovie/AddShowTimes';
+import UserList from '../modules/Admin/pages/AdminUser/UserList';
+import AddUser from '../modules/Admin/pages/AdminUser/AddUser';
+import EditUser from '../modules/Admin/pages/AdminUser/EditUser';
+
+
+
 const Routers = () => {
     const routing = useRoutes([
         {
@@ -16,21 +28,52 @@ const Routers = () => {
             ]
         },
         {
-            path:'/',
-            element:<AuthLayout />,
-            children:[
+            path: '/',
+            element: <AuthLayout />,
+            children: [
                 {
-
+                    path: "/login",
+                    element: <Login />
+                },
+                {
+                    path: "/register",
+                    element: <Register />
                 }
+
             ]
 
         },
         {
-            path:'/',
-            element:<AdminLayout />,
-            children:[
+            path: '/admin',
+            element: <AdminLayout />,
+            children: [
                 {
-                    
+                    path: '/admin/movieList',
+                    element: <MovieList />,
+                },
+                {
+                    path: '/admin/addMovie',
+                    element: <AddMovie />,
+                },
+                {
+                    path:'/admin/editMovie/"moiveId',
+                    element:<EditMovie />,
+                },
+                {
+                    path:'/admin/showtimes/:movieId',
+                    element:<AddShowTimes />,
+                },
+                {
+                    path:'/admin/userList',
+                    element:<UserList />,
+                },
+                {
+                    path:'/admin/addUser',
+                    element:<AddUser />,
+                },
+                {
+                    path:'/admin/editUser/:userId',
+                    element:<EditUser />,
                 }
             ]
         }
