@@ -12,7 +12,8 @@ import AddShowTimes from '../modules/Admin/pages/AdminMovie/AddShowTimes';
 import UserList from '../modules/Admin/pages/AdminUser/UserList';
 import AddUser from '../modules/Admin/pages/AdminUser/AddUser';
 import EditUser from '../modules/Admin/pages/AdminUser/EditUser';
-
+import User from '../modules/User/page/User';
+import ErrorPage from '../modules/Error/ErrorPage';
 
 
 const Routers = () => {
@@ -22,7 +23,8 @@ const Routers = () => {
             element: <MainLayout />,
             children: [
                 {
-
+                    path: '/user',
+                    element: <User />
                 }
 
             ]
@@ -56,26 +58,30 @@ const Routers = () => {
                     element: <AddMovie />,
                 },
                 {
-                    path:'/admin/editMovie/"moiveId',
-                    element:<EditMovie />,
+                    path: '/admin/editMovie/:movieId',
+                    element: <EditMovie />,
                 },
                 {
-                    path:'/admin/showtimes/:movieId',
-                    element:<AddShowTimes />,
+                    path: '/admin/showtimes/:movieId',
+                    element: <AddShowTimes />,
                 },
                 {
-                    path:'/admin/userList',
-                    element:<UserList />,
+                    path: '/admin/userList',
+                    element: <UserList />,
                 },
                 {
-                    path:'/admin/addUser',
-                    element:<AddUser />,
+                    path: '/admin/addUser',
+                    element: <AddUser />,
                 },
                 {
-                    path:'/admin/editUser/:userId',
-                    element:<EditUser />,
+                    path: '/admin/editUser/:userId',
+                    element: <EditUser />,
                 }
             ]
+        },
+        {
+            path: '*',
+            element: <ErrorPage />
         }
     ])
     return routing

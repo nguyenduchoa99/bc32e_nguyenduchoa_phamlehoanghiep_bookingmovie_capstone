@@ -1,11 +1,11 @@
 .admin-layout {
 	position: relative;
+
 	.logo-admin {
 		height: 32px;
 		margin: 16px;
-		background: rgba(255, 255, 255, 0.2);
 		text-align: center;
-		width: 100%;
+
 		.logo-movie {
 			color: red;
 			line-height: 32px;
@@ -20,6 +20,13 @@
 		align-items: center;
 	}
 
+	.ant-layout-sider {
+		position: relative;
+		min-width: 0;
+		background: #fff;
+		transition: all .2s;
+	}
+
 	.ant-layout-sider-has-trigger {
 		position: fixed;
 		top: 0;
@@ -31,32 +38,72 @@
 	.ant-layout-content {
 		margin-left: 200px !important;
 	}
+	.ant-menu{
+		background-color: rgba(183, 180, 181, 1); 
+	}
+	.ant-menu-title-content{
+		margin-left: 10px;
+		line-height: 30px;
+	}
+	.anticon-user{
+		line-height: 30px;
+		
+	}
+	.anticon svg{
+		display: block;
+	}
+
+	.ant-menu:after,
+	.ant-menu:before {
+		display: table;
+		content: "";
+	}
+
+	.ant-menu-submenu {
+		color: #000;
+	}
+
+	.ant-menu-submenu-title {
+		background-color: rgba(81, 74, 77, 1);
+		color: #fff;
+	}
 
 	.ant-input-group-wrapper {
 		margin-bottom: 30px;
 	}
 
-	.ant-input-search
-		> .ant-input-group
-		> .ant-input-group-addon:last-child
-		.ant-input-search-button {
-		background: #001529;
-		border-color: #001529;
+	.ant-layout-sider-trigger {
+		display: none;
+	}
+
+	.ant-input-search>.ant-input-group>.ant-input-group-addon:last-child .ant-input-search-button {
+		background-color: rgb(240, 115, 22);
+		color: #fff;
+		padding: 4px;
+		border-radius: 5px;
+		&:hover{
+			background-color: rgba(194, 64, 12, 1);
+		}
+	}
+	
+	.bg-thumb{
+		background-color: rgba(81, 74, 77, 1);
 	}
 
 	.site-layout .site-layout-background {
-		background: #fff;
+		background: rgb(72, 70, 67);
+		min-height: 0;
 
 		.logout-admin {
 			display: flex;
 			justify-content: flex-end;
 			align-items: center;
-			background: #001529;
+			background: #fff;
 			padding-right: 20px;
 
 			.name {
 				margin: 0 10px 0;
-				color: #fff;
+				color: rgb(72, 70, 67);
 				font-size: 18px;
 				font-weight: 500;
 			}
@@ -68,6 +115,7 @@
 				font-size: 12px;
 				opacity: 1;
 				cursor: pointer;
+
 				&:hover {
 					opacity: 0.8;
 				}

@@ -8,22 +8,24 @@
 
 
 .ant-form-item {
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 }
 
 .ant-col-24.ant-form-item-label {
 	padding: 0;
 }
+.ant-form-item-label > label {
+    width: 100px;
+    font-weight: 500;
+    color: #fff;
+	font-size: 20px;
+}
 
 .ant-form-horizontal .ant-form-item-label {
 	text-align: left;
+	margin-bottom: 5px;
 }
 
-.ant-form-item-label>label {
-	width: 100px;
-	font-weight: 500;
-	color: #fff;
-}
 
 .reg-button {
 	width: 100%;
@@ -52,6 +54,26 @@
 
 	}
 }
+.ant-form-item-explain-error{
+	color: #ff0000;
+}
+input{
+	width: 350px;
+	line-height: 30px;
+	border-radius: 5px;
+}
+.ant-input-suffix{
+	position: absolute;
+	right: 40px;
+	.ant-input-password-icon.anticon {
+		color: rgba(0,0,0,.45);
+		cursor: pointer;
+		transition: all .3s;
+		&:hover{
+			color: rgba(0,0,0,.85);
+		}
+	}
+}
 
 
 @media screen and (max-width: 576px) {
@@ -77,5 +99,26 @@
 			height: 40px;
 			margin-bottom: 5px;
 		}
+	}
+}
+@media screen and (max-width: 400px) {
+input{
+	width: 280px;
+}
+}
+.swal2-popup{
+	background-color: rgb(72, 70, 67);
+}
+.swal2-title{
+	color: #fff;
+}
+.swal2-html-container{
+	color: #fff;
+}
+.swal2-styled.swal2-confirm{
+	background-color: rgba(240, 115, 22, 1);
+	&:hover{
+		background-color: rgba(194, 64, 12, 1);
+		color: #fff;
 	}
 }

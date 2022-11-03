@@ -1,3 +1,45 @@
+.ant-layout {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    min-height: 0;
+    background: #f0f2f5;
+	
+}
+.ant-layout-header {
+    height: 64px;
+    padding: 0 50px;
+    color: rgba(0,0,0,.85);
+    line-height: 64px;
+}
+.ant-avatar {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0,0,0,.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    background: #ccc;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+}
+.ant-avatar-string {
+    position: absolute;
+    left: 50%;
+    transform-origin: 0 center;
+}
 .header {
 	display: flex;
 	justify-content: space-between;
@@ -10,7 +52,10 @@
 		color: red;
 		margin-bottom: 0;
 	}
-
+	.menu{
+		position: absolute;
+		left: 350px;
+	}
 	.menu a {
 		text-decoration: none;
 		color: #000;
@@ -62,6 +107,36 @@
 				}
 			}
 		}
+	}
+	.nut_dropdown {
+		color: #000;
+		font-size: 16px;
+		border: none;
+		margin:0 20px 0 20px;
+	  }
+	  .dropdown {
+		position: relative;
+		display: inline-block;
+	  }
+	  .noidung_dropdown {
+		display: none;
+		position: absolute;
+		background-color: #f1f1f1;
+		min-width: 210px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		right: -40px;
+	  }
+	
+	.noidung_dropdown a {
+		color: black;
+		text-decoration: none;
+	  }
+	.noidung_dropdown a:hover {background-color: #ddd;}
+	
+	  .dropdown:hover .noidung_dropdown {display: block;}
+	svg{
+		display: inline-block;
 	}
 }
 
@@ -164,6 +239,37 @@
 .ant-dropdown {
 	z-index: 9999;
 }
+.nut_dropdown {
+	color: #000;
+	font-size: 16px;
+	border: none;
+  }
+  .dropdown {
+	position: relative;
+	display: inline-block;
+  }
+  .noidung_dropdown {
+	display: none;
+	position: absolute;
+	padding-left: 20px;
+	background-color: #f1f1f1;
+	min-width: 200px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	right: -180px;
+  }
+
+.noidung_dropdown a {
+	color: black;
+	text-decoration: none;
+  }
+.noidung_dropdown a:hover {background-color: #ddd;}
+
+  .dropdown:hover .noidung_dropdown {display: block;}
+svg{
+	display: inline-block;
+}
+
 
 @media screen and (max-width: 1200px) {
 }
@@ -200,3 +306,4 @@
 		}
 	}
 }
+

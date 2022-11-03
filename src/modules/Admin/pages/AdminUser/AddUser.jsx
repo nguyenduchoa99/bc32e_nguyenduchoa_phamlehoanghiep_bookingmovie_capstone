@@ -6,8 +6,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-
-
+import './userList.scss'
 const AddUser = () => {
 	
 
@@ -52,12 +51,12 @@ const AddUser = () => {
 
 	return (
 		<div className="add-user">
-			<h1>Thêm Người Dùng</h1>
+			<h1 className='text-orange-500 mb-5 text-[30px] font-semibold'>Thêm Người Dùng</h1>
 
 			<div className="add-user-info">
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<div className="row">
-						<div className="col-6">
+					<div>
+						
 							<div className="form-group mb-3">
 								<label className="form-label">Tài Khoản</label>
 								<input
@@ -72,7 +71,7 @@ const AddUser = () => {
 									})}
 								/>
 								{errors.taiKhoan && (
-									<p className="text-danger">{errors.taiKhoan.message}</p>
+									<p className="text-red-500">{errors.taiKhoan.message}</p>
 								)}
 							</div>
 							<div className="form-group mb-3">
@@ -97,7 +96,7 @@ const AddUser = () => {
 									})}
 								/>
 								{errors.matKhau && (
-									<p className="text-danger">{errors.matKhau.message}</p>
+									<p className="text-red-500">{errors.matKhau.message}</p>
 								)}
 							</div>
 							<div className="form-group mb-3">
@@ -119,12 +118,12 @@ const AddUser = () => {
 									})}
 								/>
 								{errors.email && (
-									<p className="text-danger">{errors.email.message}</p>
+									<p className="text-red-500">{errors.email.message}</p>
 								)}
 							</div>
-						</div>
+						
 
-						<div className="col-6">
+						
 							<div className="form-group mb-3">
 								<label className="form-label">Số Điện Thoại</label>
 								<input
@@ -143,7 +142,7 @@ const AddUser = () => {
 									})}
 								/>
 								{errors.soDt && (
-									<p className="text-danger">{errors.soDt.message}</p>
+									<p className="text-red-500">{errors.soDt.message}</p>
 								)}
 							</div>
 							<div className="form-group mb-3">
@@ -160,7 +159,7 @@ const AddUser = () => {
 									})}
 								/>
 								{errors.hoTen && (
-									<p className="text-danger">{errors.hoTen.message}</p>
+									<p className="text-red-500">{errors.hoTen.message}</p>
 								)}
 							</div>
 							<div className="form-group mb-3">
@@ -178,11 +177,11 @@ const AddUser = () => {
 									})}
 								</select>
 							</div>
-						</div>
+						
 					</div>
 
 					<div className="add-user-btn mt-5">
-						<button className="btn btn-success">Thêm Người Dùng</button>
+						<button className="add-btn">Thêm Người Dùng</button>
 					</div>
 				</form>
 			</div>

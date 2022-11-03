@@ -100,8 +100,8 @@ const UserList = () => {
 			matKhau: <p>{user.matKhau}</p>,
 			loaiNguoiDung: (
 				<p
-					className={cn("text-primary", {
-						"text-danger": user.maLoaiNguoiDung === "QuanTri",
+					className={cn("text-white", {
+						"text-red-500": user.maLoaiNguoiDung === "QuanTri",
 					})}
 				>
 					{user.maLoaiNguoiDung}
@@ -139,14 +139,13 @@ const UserList = () => {
 			<div className="w-50 mb-3">
 				<Search
 					placeholder="Nhập tên tài khoản"
-					allowClear
 					enterButton="Tìm Kiếm"
 					size="large"
 					onSearch={handleSearch}
 				/>
 			</div>
 
-			<h1 className="text-danger mb-5 fs-2">Danh Sách User</h1>
+			<h1 className="text-orange-500 mb-5 text-[30px] font-semibold">Danh Sách User</h1>
 
 			<div className="user-list-details">
 				<Table columns={columns} dataSource={data} />

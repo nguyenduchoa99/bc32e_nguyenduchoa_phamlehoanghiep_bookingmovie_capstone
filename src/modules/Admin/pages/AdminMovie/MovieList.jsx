@@ -96,7 +96,7 @@ const MovieList = () => {
 					<img width={80} height={100} src={movie.hinhAnh} alt={movie.maPhim} />
 				</div>
 			),
-			tenPhim: <h3 className="fs-5 text-danger">{movie.tenPhim}</h3>,
+			tenPhim: <h3 className="text-red-600 text-[18px]">{movie.tenPhim}</h3>,
 			moTa: <p>{movie.moTa}</p>,
 			chinhSua: (
 				<>
@@ -135,12 +135,11 @@ const MovieList = () => {
 		<div className="movie-list">
 			<Search
 				placeholder="Nhập tên phim"
-				allowClear
 				enterButton="Tìm Kiếm"
 				size="large"
 				onSearch={handleSearch}
 			/>
-			<h1 className="text-danger mb-5 fs-2">Danh Sách Phim</h1>
+			<h1 className="text-orange-500 mb-5 text-[30px] font-semibold">Danh Sách Phim</h1>
 
 			<div>
 				<Table columns={columns} dataSource={data} />

@@ -1,4 +1,4 @@
-import { DatePicker, InputNumber} from "antd";
+import { DatePicker } from "antd";
 import quanLyPhimService from "../../../../services/quanLyPhimService";
 import dayjs from "dayjs";
 import useRequest from "../../../../hooks/useRequest";
@@ -14,11 +14,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
+import './addShowTimes.scss'
 
 
 const AddShowTimes = () => {
-	
+
 
 	const dispatch = useDispatch();
 	const { movieId } = useParams();
@@ -46,15 +46,15 @@ const AddShowTimes = () => {
 		try {
 			await dispatch(addTheater(values));
 			Swal.fire({
-                icon:'success',
-                title:'Thêm lịch chiếu thành công',
-            })
+				icon: 'success',
+				title: 'Thêm lịch chiếu thành công',
+			})
 		} catch (error) {
 			Swal.fire({
-                icon:'error',
-                title:'Thêm lịch chiếu thất bại',
-                text:error,
-            })
+				icon: 'error',
+				title: 'Thêm lịch chiếu thất bại',
+				text: error,
+			})
 		}
 	};
 
@@ -64,7 +64,6 @@ const AddShowTimes = () => {
 	};
 
 	const handleDateTime = (value) => {
-		console.log(value);
 		setValue("ngayChieuGioChieu", dayjs(value).format("DD/MM/YYYY hh:mm:ss"));
 	};
 
@@ -74,9 +73,9 @@ const AddShowTimes = () => {
 
 	return (
 		<div className="add-showtimes">
-			<h1 className="text-danger fs-2">Thêm Lịch Chiếu</h1>
+			<h1 className="text-orange-500 mb-5 text-[30px] font-semibold">Thêm Lịch Chiếu</h1>
 
-			<div className="d-flex">
+			<div className="flex">
 				<div className="mt-3 text-center w-100">
 					<img
 						src={movie?.hinhAnh}
@@ -84,7 +83,7 @@ const AddShowTimes = () => {
 						width={250}
 						height={350}
 					/>
-					<h5 className="text-danger mt-3">{movie?.tenPhim}</h5>
+					<h5 className="text-red-500 text-[25px] mt-3">{movie?.tenPhim}</h5>
 				</div>
 
 				<form className="pt-4 w-75 m-auto" onSubmit={handleSubmit(onSubmit)}>
@@ -120,16 +119,18 @@ const AddShowTimes = () => {
 					</div>
 					<div className="form-group mb-4">
 						<label className="form-label d-block">Ngày Giờ Chiếu</label>
-						<DatePicker
-							format={"DD/MM/YYYY hh:mm:ss A"}
+						<input
+							type='date'
+							format={"DD/MM/YYYY"}
 							placeholder="Chọn ngày giờ"
-							showTime
+							
+							className='data-1'
 							onChange={handleDateTime}
 						/>
 					</div>
 					<div className="form-group mb-4">
 						<label className="form-label d-block">Giá Vé</label>
-						<InputNumber
+						<input
 							className="w-25"
 							placeholder="Chọn giá vé"
 							min={75000}
