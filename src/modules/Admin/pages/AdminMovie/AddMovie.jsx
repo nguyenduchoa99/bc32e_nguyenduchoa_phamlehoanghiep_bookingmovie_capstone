@@ -1,4 +1,4 @@
-import { DatePicker} from "antd";
+import { DatePicker } from 'antd'
 import dayjs from "dayjs";
 import { addMovie } from "../../slices/adminSlice";
 import { useState } from "react";
@@ -6,11 +6,11 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-
 import "./addMoive.scss";
+import moment from 'moment'
 
 const AddMovie = () => {
-	
+
 
 	const [imgPreview, setImgPreview] = useState("");
 
@@ -43,22 +43,21 @@ const AddMovie = () => {
 		try {
 			await dispatch(addMovie(values)).unwrap();
 			Swal.fire({
-                icon:'success',
-                title:'Thêm phim thành công'
-            })
+				icon: 'success',
+				title: 'Thêm phim thành công'
+			})
 			navigate("/admin/movieList");
 		} catch (error) {
 			Swal.fire({
-                icon:'error',
-                title:'Thêm phim thất bại',
-                text:error,
-            })
+				icon: 'error',
+				title: 'Thêm phim thất bại',
+				text: error,
+			})
 		}
 	};
 
 	const handleDateTime = (value) => {
-		console.log(value);
-		setValue("ngayKhoiChieu", dayjs(value).format("DD/MM/YYYY"));
+		setValue("ngayChieuGioChieu", dayjs(value).format("DD/MM/YYYY hh:mm:ss"));
 	};
 
 	const handleChangeImage = (evt) => {
@@ -77,7 +76,7 @@ const AddMovie = () => {
 
 	return (
 		<div className="add-movie">
-			<h1 className="text-danger fs-2">Thêm Phim</h1>
+			<h1 className="text-orange-500 mb-5 text-[30px] font-semibold">Thêm Phim</h1>
 			<form className="pt-4" onSubmit={handleSubmit(onSubmit)}>
 				<div>
 					<label>Tên Phim</label>
@@ -143,16 +142,18 @@ const AddMovie = () => {
 				</div>
 				<div>
 					<label className="d-block">Ngày Khởi Chiếu</label>
-					<DatePicker
+					<input
+						type='date	'
 						format={"DD/MM/YYYY"}
 						placeholder="Chọn ngày"
 						onChange={handleDateTime}
 					/>
+
 				</div>
 				<div className="form-check form-switch">
 					<label className="form-check-label">Hot</label>
 					<input
-						className="form-check-input"
+						className="form-check-input check-1 "
 						type="checkbox"
 						role="switch"
 						id="flexSwitchCheckDefault"

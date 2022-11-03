@@ -5,20 +5,20 @@ import { Layout } from "antd";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-
+import mainLayout from './mainLayout.module.scss'
 
 const MainLayout = () => {
 	
 
 	return (
 		<Layout>
-      <Layout.Header>
+      <Layout.Header className={mainLayout.mainHeader}>
         <Header />
       </Layout.Header>
       <Layout.Content >
         <Outlet />
       </Layout.Content>
-      <Layout.Footer>
+      <Layout.Footer >
         <Footer />
       </Layout.Footer>
     </Layout>

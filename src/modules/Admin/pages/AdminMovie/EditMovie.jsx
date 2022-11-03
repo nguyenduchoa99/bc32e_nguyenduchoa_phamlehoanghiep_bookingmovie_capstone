@@ -10,7 +10,7 @@ import quanLyPhimService from "../../../../services/quanLyPhimService";
 import { updateMovie } from "../../slices/adminSlice";
 import useRequest from "../../../../hooks/useRequest";
 import Swal from "sweetalert2";
-// import './editMovie.scss'
+
 
 
 const EditMovie = () => {
@@ -95,7 +95,7 @@ const EditMovie = () => {
 
 	return (
 		<div className="add-movie">
-			<h1 className="text-danger fs-2">Cập Nhật Phim</h1>
+			<h1 className="text-orange-500 mb-5 text-[30px] font-semibold">Cập Nhật Phim</h1>
 			<form className="pt-4" onSubmit={handleSubmit(onSubmit)}>
 				<div>
 					<label>Tên Phim</label>

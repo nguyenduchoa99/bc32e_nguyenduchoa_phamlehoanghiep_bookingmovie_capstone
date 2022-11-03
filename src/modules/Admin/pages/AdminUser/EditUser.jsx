@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import './userList.scss'
 
 const EditUser = () => {
 	const { userId } = useParams();
@@ -64,12 +64,12 @@ const EditUser = () => {
 
 	return (
 		<div>
-			<h1>Cập Nhật Người Dùng</h1>
+			<h1 className='text-orange-500 mb-5 text-[30px] font-semibold'>Cập Nhật Người Dùng</h1>
 
 			<div className="add-user-info">
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<div className="row">
-						<div className="col-6">
+					<div>
+						
 							<div className="form-group mb-3">
 								<label className="form-label">Tài Khoản</label>
 								<input
@@ -135,9 +135,9 @@ const EditUser = () => {
 									<p className="text-danger">{errors.email.message}</p>
 								)}
 							</div>
-						</div>
+						
 
-						<div className="col-6">
+						
 							<div className="form-group mb-3">
 								<label className="form-label">Số Điện Thoại</label>
 								<input
@@ -186,11 +186,11 @@ const EditUser = () => {
 									<option value="QuanTri">Quản Trị</option>
 								</select>
 							</div>
-						</div>
+						
 					</div>
 
 					<div className="add-user-btn mt-5">
-						<button className="btn btn-success">Cập Nhật</button>
+						<button className="update-info-btn">Cập Nhật</button>
 					</div>
 				</form>
 			</div>

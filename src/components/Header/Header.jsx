@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { UserOutlined } from "@ant-design/icons";
-import { Avatar, Dropdown, Menu, Space } from "antd";
+import { Avatar, Dropdown, Menu, Space } from 'antd'
 import { DownOutlined } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,105 +24,105 @@ const Header = () => {
 		navigate("/");
 	};
 
-	const menuItem =
+	const item =
 		user?.maLoaiNguoiDung === "QuanTri"
 			? [
-					{
-						label: (
-							<>
-								<span style={{ lineHeight: "25px", marginRight: "10px" }}>
-									<AiOutlineUser />
-								</span>
-								<Link
-									to="/user"
-									style={{ textDecoration: "none", fontWeight: "500" }}
-								>
-									Thông tin cá nhân
-								</Link>
-							</>
-						),
-						key: "0",
-					},
-					{
-						label: (
-							<>
-								<span style={{ lineHeight: "25px", marginRight: "10px" }}>
-									<AiOutlineSetting />
-								</span>
-								<Link
-									style={{ textDecoration: "none", fontWeight: "500" }}
-									to="/admin"
-								>
-									Quản trị
-								</Link>
-							</>
-						),
-						key: "1",
-					},
-					{
-						type: "divider",
-					},
-					{
-						label: (
-							<>
-								<span style={{ lineHeight: "25px", marginRight: "10px" }}>
-									<FiLogOut />
-								</span>
-								<a
-									style={{ textDecoration: "none", fontWeight: "500" }}
-									href="#"
-									onClick={handleLogout}
-								>
-									Đăng xuất
-								</a>
-							</>
-						),
-						key: "3",
-					},
-			  ]
+				{
+					label: (
+						<div>
+							<span style={{ lineHeight: "25px", marginRight: "10px" }}>
+								<AiOutlineUser />
+							</span>
+							<Link
+								to="/user"
+								style={{ textDecoration: "none", fontWeight: "500" }}
+							>
+								Thông tin cá nhân
+							</Link>
+						</div>
+					),
+					key: "0",
+				},
+				{
+					label: (
+						<div>
+							<span style={{ lineHeight: "25px", marginRight: "10px" }}>
+								<AiOutlineSetting />
+							</span>
+							<Link
+								style={{ textDecoration: "none", fontWeight: "500" }}
+								to="/admin"
+							>
+								Quản trị
+							</Link>
+						</div>
+					),
+					key: "1",
+				},
+				{
+					type: "divider",
+				},
+				{
+					label: (
+						<div>
+							<span style={{ lineHeight: "25px", marginRight: "10px" }}>
+								<FiLogOut />
+							</span>
+							<a
+								style={{ textDecoration: "none", fontWeight: "500" }}
+								href="#"
+								onClick={handleLogout}
+							>
+								Đăng xuất
+							</a>
+						</div>
+					),
+					key: "3",
+				},
+			]
 			: [
-					{
-						label: (
-							<>
-								<span style={{ lineHeight: "25px", marginRight: "10px" }}>
-									<AiOutlineUser />
-								</span>
-								<Link
-									to="/user"
-									style={{ textDecoration: "none", fontWeight: "500" }}
-								>
-									Thông tin cá nhân
-								</Link>
-							</>
-						),
-						key: "0",
-					},
-					{
-						type: "divider",
-					},
-					{
-						label: (
-							<>
-								<span style={{ lineHeight: "25px", marginRight: "10px" }}>
-									<FiLogOut />
-								</span>
-								<a
-									style={{ textDecoration: "none", fontWeight: "500" }}
-									href="#"
-									onClick={handleLogout}
-								>
-									Đăng xuất
-								</a>
-							</>
-						),
-						key: "3",
-					},
-			  ];
+				{
+					label: (
+						<div>
+							<span style={{ lineHeight: "25px", marginRight: "10px" }}>
+								<AiOutlineUser />
+							</span>
+							<Link
+								to="/user"
+								style={{ textDecoration: "none", fontWeight: "500" }}
+							>
+								Thông tin cá nhân
+							</Link>
+						</div>
+					),
+					key: "0",
+				},
+				{
+					type: "divider",
+				},
+				{
+					label: (
+						<div>
+							<span style={{ lineHeight: "25px", marginRight: "10px" }}>
+								<FiLogOut />
+							</span>
+							<a
+								style={{ textDecoration: "none", fontWeight: "500" }}
+								href="#"
+								onClick={handleLogout}
+							>
+								Đăng xuất
+							</a>
+						</div>
+					),
+					key: "3",
+				},
+			];
 
-	const menu = <Menu items={menuItem} />;
+	const menu = <Menu items={item} />;
 
 	return (
-		<>
+		<div>
 			{/* desktop */}
 			<div className="header">
 				<div>
@@ -146,13 +146,16 @@ const Header = () => {
 							{user.taiKhoan.slice(0, 1).toUpperCase()}
 						</Avatar>
 						<p className="name">{user.taiKhoan}</p>
-						<Dropdown overlay={menu} trigger={["click"]}>
-							<a onClick={(e) => e.preventDefault()}>
-								<Space>
-									<DownOutlined style={{ color: "#999", fontSize: "18px" }} />
-								</Space>
-							</a>
-						</Dropdown>
+						<div className="dropdown ">
+						
+							<button className="nut_dropdown">
+								<DownOutlined />
+							</button>
+							<div className="noidung_dropdown">
+								{menu}
+							</div>
+						</div>
+
 					</div>
 				) : (
 					<div className="auth">
@@ -202,13 +205,14 @@ const Header = () => {
 								{user.taiKhoan.slice(0, 1).toUpperCase()}
 							</Avatar>
 							<p className="name-mobile">{user.taiKhoan}</p>
-							<Dropdown overlay={menu} trigger={["click"]}>
-								<a onClick={(e) => e.preventDefault()}>
-									<Space>
-										<DownOutlined style={{ color: "#999", fontSize: "18px" }} />
-									</Space>
-								</a>
-							</Dropdown>
+							<div className="dropdown">
+								<button className="nut_dropdown">
+									<DownOutlined />
+								</button>
+								<div className="noidung_dropdown">
+									{menu}
+								</div>
+							</div>
 						</div>
 					</div>
 				) : (
@@ -235,7 +239,7 @@ const Header = () => {
 					<a href="#footer">Liên Hệ</a>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
