@@ -9,7 +9,7 @@ const UserBooking = ({ userInfo }) => {
 			<h1 className="user-history-title">LỊCH SỬ ĐẶT VÉ</h1>
 
 			<div className="user-history-booking">
-				<table className="w-full text-xs whitespace-nowrap text-white">
+				<table className="w-full text-xs whitespace-nowrap text-white text-left">
 					<thead >
 						<tr className='text-[15px]'>
 							<th>STT</th>
@@ -26,7 +26,7 @@ const UserBooking = ({ userInfo }) => {
 					<tbody className="table-group-divider">
 						{userInfo?.thongTinDatVe.map((list, index) => {
 							return (
-								<tr key={index}>
+								<tr key={index} className='border-b-2'>
 									<td>
 										<strong>{index + 1}</strong>
 									</td>
