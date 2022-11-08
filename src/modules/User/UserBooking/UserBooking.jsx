@@ -9,7 +9,7 @@ const UserBooking = ({ userInfo }) => {
 			<h1 className="user-history-title">LỊCH SỬ ĐẶT VÉ</h1>
 
 			<div className="user-history-booking">
-				<table className="w-full text-xs whitespace-nowrap text-white text-left">
+				<table className="w-full text-xs whitespace-nowrap text-left">
 					<thead >
 						<tr className='text-[15px]'>
 							<th>STT</th>

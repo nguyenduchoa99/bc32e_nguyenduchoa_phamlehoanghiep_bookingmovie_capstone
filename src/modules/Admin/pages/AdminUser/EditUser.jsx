@@ -1,3 +1,4 @@
+
 import quanLyNguoiDungService from "../../../../services/quanLyNguoiDungService";
 import useRequest from "../../../../hooks/useRequest";
 import { updateUser } from "../../slices/userSlice";
@@ -6,10 +7,12 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import Swal from "sweetalert2";
-import './userList.scss'
+import Swal from 'sweetalert2'
 
+import './editUser.scss'
 const EditUser = () => {
+
+
 	const { userId } = useParams();
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -49,27 +52,28 @@ const EditUser = () => {
 		try {
 			await dispatch(updateUser(values)).unwrap();
 			await Swal.fire({
-                icon:'success',
-                title:'Cập nhật thành công',
-            })
+				icon:'success',
+				title:'Cập nhật thành công'
+			})
 			navigate("/admin/userList");
 		} catch (error) {
 			Swal.fire({
-                icon:'error',
-                title:'Cập nhật thất bại',
-                text:error,
-            })
+				icon:'error',
+				title:'Cập nhật thất bại',
+				text:error
+			})
 		}
 	};
 
 	return (
 		<div>
-			<h1 className='text-orange-500 mb-5 text-[30px] font-semibold'>Cập Nhật Người Dùng</h1>
+			<h1>Cập Nhật Người Dùng</h1>
 
 			<div className="add-user-info">
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<div>
-						
+					<div >
+						<div className="col-6">
+							{/* tài khoản */}
 							<div className="form-group mb-3">
 								<label className="form-label">Tài Khoản</label>
 								<input
@@ -88,6 +92,8 @@ const EditUser = () => {
 									<p className="text-danger">{errors.taiKhoan.message}</p>
 								)}
 							</div>
+
+							{/* mật khẩu */}
 							<div className="form-group mb-3">
 								<label className="form-label">Mật Khẩu</label>
 								<input
@@ -113,6 +119,8 @@ const EditUser = () => {
 									<p className="text-danger">{errors.matKhau.message}</p>
 								)}
 							</div>
+
+							{/* email */}
 							<div className="form-group mb-3">
 								<label className="form-label">Email</label>
 								<input
@@ -135,9 +143,10 @@ const EditUser = () => {
 									<p className="text-danger">{errors.email.message}</p>
 								)}
 							</div>
-						
+						</div>
 
-						
+						<div className="col-6">
+							{/* số điện thoại */}
 							<div className="form-group mb-3">
 								<label className="form-label">Số Điện Thoại</label>
 								<input
@@ -159,6 +168,8 @@ const EditUser = () => {
 									<p className="text-danger">{errors.soDt.message}</p>
 								)}
 							</div>
+
+							{/* họ tên */}
 							<div className="form-group mb-3">
 								<label className="form-label">Họ Tên</label>
 								<input
@@ -176,6 +187,8 @@ const EditUser = () => {
 									<p className="text-danger">{errors.hoTen.message}</p>
 								)}
 							</div>
+
+							{/* mã loại người dùng */}
 							<div className="form-group mb-3">
 								<label className="form-label">Mã Loại Người Dùng</label>
 								<select
@@ -186,11 +199,11 @@ const EditUser = () => {
 									<option value="QuanTri">Quản Trị</option>
 								</select>
 							</div>
-						
+						</div>
 					</div>
 
 					<div className="add-user-btn mt-5">
-						<button className="update-info-btn">Cập Nhật</button>
+						<button className="update-btn">Cập Nhật</button>
 					</div>
 				</form>
 			</div>

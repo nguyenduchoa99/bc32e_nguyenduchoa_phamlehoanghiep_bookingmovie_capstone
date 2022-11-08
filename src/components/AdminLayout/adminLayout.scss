@@ -1,13 +1,14 @@
 .admin-layout {
 	position: relative;
-
 	.logo-admin {
 		height: 32px;
-		margin: 16px;
+		margin: 16px 0 ;
 		text-align: center;
+		
 
 		.logo-movie {
 			color: red;
+			font-style: italic;
 			line-height: 32px;
 			font-size: 25px;
 			font-weight: 700;
@@ -19,14 +20,12 @@
 		justify-content: flex-end;
 		align-items: center;
 	}
-
-	.ant-layout-sider {
-		position: relative;
-		min-width: 0;
-		background: #fff;
-		transition: all .2s;
+	.text-home{
+		color: #2146C7 !important;
+		&:hover{
+			color: #0008C1 !important;
+		}
 	}
-
 	.ant-layout-sider-has-trigger {
 		position: fixed;
 		top: 0;
@@ -38,73 +37,32 @@
 	.ant-layout-content {
 		margin-left: 200px !important;
 	}
-	.ant-menu{
-		background-color: rgba(183, 180, 181, 1); 
-	}
-	.ant-menu-title-content{
-		margin-left: 10px;
-		line-height: 30px;
-		cursor: pointer;
-	}
-	.anticon-user{
-		line-height: 30px;
-		
-	}
-	.anticon svg{
-		display: block;
-	}
-
-	.ant-menu:after,
-	.ant-menu:before {
-		display: table;
-		content: "";
-	}
-
-	.ant-menu-submenu {
-		color: #000;
-	}
-
-	.ant-menu-submenu-title {
-		background-color: rgba(81, 74, 77, 1);
-		color: #fff;
-	}
 
 	.ant-input-group-wrapper {
 		margin-bottom: 30px;
 	}
 
-	.ant-layout-sider-trigger {
-		display: none;
-	}
-
-	.ant-input-search>.ant-input-group>.ant-input-group-addon:last-child .ant-input-search-button {
-		background-color: rgb(240, 115, 22);
-		color: #fff;
-		padding: 4px;
-		border-radius: 5px;
-		&:hover{
-			background-color: rgba(194, 64, 12, 1);
-		}
-	}
-	
-	.bg-thumb{
-		background-color: rgba(81, 74, 77, 1);
+	.ant-input-search
+		> .ant-input-group
+		> .ant-input-group-addon:last-child
+		.ant-input-search-button {
+		background: #001529;
+		border-color: #001529;
 	}
 
 	.site-layout .site-layout-background {
-		background: rgb(72, 70, 67);
-		min-height: 0;
+		background: #fff;
 
 		.logout-admin {
 			display: flex;
 			justify-content: flex-end;
 			align-items: center;
-			background: #fff;
+			background: #001529;
 			padding-right: 20px;
 
 			.name {
 				margin: 0 10px 0;
-				color: rgb(72, 70, 67);
+				color: #fff;
 				font-size: 18px;
 				font-weight: 500;
 			}
@@ -116,7 +74,6 @@
 				font-size: 12px;
 				opacity: 1;
 				cursor: pointer;
-
 				&:hover {
 					opacity: 0.8;
 				}

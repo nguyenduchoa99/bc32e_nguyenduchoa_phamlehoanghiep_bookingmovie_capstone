@@ -1,7 +1,6 @@
 .user {
 	.user-main {
 		display: flex;
-		background-color: rgb(72, 70, 67);
 
 		.user-info {
 			height: 100vh;
@@ -26,13 +25,10 @@
 
 			.user-name {
 				margin-top: 20px;
-				font-size: 25px;
+				font-size: 30px;
 				font-weight: 500;
-				color: rgb(72, 70, 67);
 			}
-			.text-booking{
-				color: rgb(72, 70, 67);
-			}
+
 			.user-type {
 				font-size: 20px;
 				font-weight: 500;

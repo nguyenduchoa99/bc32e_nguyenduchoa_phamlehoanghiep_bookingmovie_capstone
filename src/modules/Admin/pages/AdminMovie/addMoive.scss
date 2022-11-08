@@ -5,14 +5,6 @@
 		padding: 20px;
 		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 		border-radius: 5px;
-		label{
-			color: #fff;
-			font-size: 20px;
-			padding-bottom: 5px;
-		}
-		#flexSwitchCheckDefault{
-			width:30px;
-		}
 		div {
 			height: 100px;
 			input {
@@ -59,14 +51,10 @@
 			border: none;
 			outline: none;
 			border-radius: 5px;
-			color: #fff;
-			background-color: rgba(240, 115, 22, 1);
+			color: #eee;
+			background: orange;
 			font-size: 18px;
 			font-weight: 500;
-			&:hover {
-				background-color: rgba(194, 64, 12, 1);
-				color: #fff;
-			}
 		}
 	}
 }

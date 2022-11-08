@@ -100,8 +100,8 @@ const UserList = () => {
 			matKhau: <p>{user.matKhau}</p>,
 			loaiNguoiDung: (
 				<p
-					className={cn("text-white", {
-						"text-red-500": user.maLoaiNguoiDung === "QuanTri",
+					className={cn("text-blue-500", {
+						"text-red-700": user.maLoaiNguoiDung === "QuanTri",
 					})}
 				>
 					{user.maLoaiNguoiDung}

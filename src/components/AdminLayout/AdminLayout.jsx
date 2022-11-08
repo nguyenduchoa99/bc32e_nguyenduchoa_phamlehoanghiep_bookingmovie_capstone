@@ -49,7 +49,7 @@ const items = [
 ];
 
 const AdminLayout = () => {
-	
+
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -73,13 +73,17 @@ const AdminLayout = () => {
 				<Sider
 					collapsible
 					collapsed={collapsed}
+					onCollapse={(value) => setCollapsed(value)}
 				>
 					<div style={{ opacity: collapsed ? 0 : 1 }} className="logo-admin">
-						<h1 className="logo-movie">CyberMovie</h1>
+						<h1 className="logo-movie">
+							CyberMovie
+						</h1>
 					</div>
 
 					<Menu
 						defaultSelectedKeys={["sub1"]}
+						theme="dark"
 						mode="inline"
 						items={items}
 					/>
@@ -107,27 +111,33 @@ const AdminLayout = () => {
 						</div>
 					</Header>
 
-					<Content>
-						<Breadcrumb>
-							<div className='flex bg-thumb'>
-							<Breadcrumb.Item className='mr-2'>
+					<Content
+						style={{
+							margin: "0 16px",
+						}}
+					>
+						<Breadcrumb
+							style={{
+								margin: "16px",
+							}}
+						>
+							<Breadcrumb.Item>
 								<Link
 									style={{ textDecoration: "none" }}
-									className="text-orange-500 "
+									className="text-home"
 									to="/"
 								>
 									Home
 								</Link>
 							</Breadcrumb.Item>
-							<Breadcrumb.Item className='ml-2 text-white'>Admin</Breadcrumb.Item>
-							</div>
+							<Breadcrumb.Item>Admin</Breadcrumb.Item>
 						</Breadcrumb>
 
 						<div
 							className="site-layout-background"
 							style={{
-								padding:"0 24px ",
-								// minHeight: 360,
+								padding: 24,
+								minHeight: 360,
 							}}
 						>
 							<Outlet />

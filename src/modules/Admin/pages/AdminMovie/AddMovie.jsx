@@ -143,7 +143,7 @@ const AddMovie = () => {
 				<div>
 					<label className="d-block">Ngày Khởi Chiếu</label>
 					<input
-						type='date	'
+						type='date'
 						format={"DD/MM/YYYY"}
 						placeholder="Chọn ngày"
 						onChange={handleDateTime}
