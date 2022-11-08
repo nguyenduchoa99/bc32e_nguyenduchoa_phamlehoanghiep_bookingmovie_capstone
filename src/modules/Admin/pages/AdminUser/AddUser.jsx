@@ -5,8 +5,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
-import './userList.scss'
+import './addUser.scss'
+import Swal from 'sweetalert2'
 const AddUser = () => {
 	
 
@@ -36,27 +36,28 @@ const AddUser = () => {
 		try {
 			await dispatch(addUser(values)).unwrap();
 			Swal.fire({
-                icon:'success',
-                title:'Thêm người dùng thành công',
-            })
+				icon:'success',
+				title:'Thêm người dùng thành công'
+			})
 			navigate("/admin/userList");
 		} catch (error) {
 			Swal.fire({
-                icon:'error',
-                title:'Thêm người dùng thất bại',
-                text:error,
-            })
+				icon:'error',
+				title:'Thêm người dùng thất bại',
+				text:error
+			})
 		}
 	};
 
 	return (
 		<div className="add-user">
-			<h1 className='text-orange-500 mb-5 text-[30px] font-semibold'>Thêm Người Dùng</h1>
+			<h1 className="text-orange-500 mb-5 text-[30px] font-semibold">Thêm Người Dùng</h1>
 
 			<div className="add-user-info">
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div>
-						
+						<div className="col-6">
+							{/* tài khoản */}
 							<div className="form-group mb-3">
 								<label className="form-label">Tài Khoản</label>
 								<input
@@ -74,6 +75,8 @@ const AddUser = () => {
 									<p className="text-red-500">{errors.taiKhoan.message}</p>
 								)}
 							</div>
+
+							{/* mật khẩu */}
 							<div className="form-group mb-3">
 								<label className="form-label">Mật Khẩu</label>
 								<input
@@ -99,6 +102,8 @@ const AddUser = () => {
 									<p className="text-red-500">{errors.matKhau.message}</p>
 								)}
 							</div>
+
+							{/* email */}
 							<div className="form-group mb-3">
 								<label className="form-label">Email</label>
 								<input
@@ -121,9 +126,10 @@ const AddUser = () => {
 									<p className="text-red-500">{errors.email.message}</p>
 								)}
 							</div>
-						
+						</div>
 
-						
+						<div className="col-6">
+							{/* số điện thoại */}
 							<div className="form-group mb-3">
 								<label className="form-label">Số Điện Thoại</label>
 								<input
@@ -137,7 +143,7 @@ const AddUser = () => {
 										},
 										pattern: {
 											value: /^[0-9]+$/,
-											message: "Số Điện thoại không đúng định dạng",
+											message: "Số điện thoại không đúng định dạng",
 										},
 									})}
 								/>
@@ -145,6 +151,8 @@ const AddUser = () => {
 									<p className="text-red-500">{errors.soDt.message}</p>
 								)}
 							</div>
+
+							{/* họ tên */}
 							<div className="form-group mb-3">
 								<label className="form-label">Họ Tên</label>
 								<input
@@ -162,6 +170,8 @@ const AddUser = () => {
 									<p className="text-red-500">{errors.hoTen.message}</p>
 								)}
 							</div>
+
+							{/* mã loại người dùng */}
 							<div className="form-group mb-3">
 								<label className="form-label">Mã Loại Người Dùng</label>
 								<select
@@ -177,7 +187,7 @@ const AddUser = () => {
 									})}
 								</select>
 							</div>
-						
+						</div>
 					</div>
 
 					<div className="add-user-btn mt-5">

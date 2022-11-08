@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 //css
 import './assets/css/index.css';
-
+import "antd/dist/antd.min.css";
 //redux
 import { Provider } from 'react-redux';
 import store from './store/configStore';
