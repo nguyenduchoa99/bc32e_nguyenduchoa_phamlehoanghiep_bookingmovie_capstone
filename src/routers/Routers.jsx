@@ -14,6 +14,10 @@ import AddUser from '../modules/Admin/pages/AdminUser/AddUser';
 import EditUser from '../modules/Admin/pages/AdminUser/EditUser';
 import User from '../modules/User/page/User';
 import ErrorPage from '../modules/Error/ErrorPage';
+import Home from '../modules/Home/Home';
+import Movie from '../modules/Movie/Movie';
+import Booking from '../modules/Booking/Booking';
+import OutRoute from './OutRouter';
 
 
 const Routers = () => {
@@ -23,8 +27,24 @@ const Routers = () => {
             element: <MainLayout />,
             children: [
                 {
+                    index: '/',
+                    element:<Home/>
+                },
+                {
+                    path: '/movie/:movieId',
+                    element: <Movie/>
+                },
+                {
+                    path: '/ticket/:ticketId',
+                    element: <Booking/>
+                },
+                {
                     path: '/user',
                     element: <User />
+                },
+                {
+                    path:'checkout/:checkoutId',
+                    element:<OutRoute/>
                 }
 
             ]
