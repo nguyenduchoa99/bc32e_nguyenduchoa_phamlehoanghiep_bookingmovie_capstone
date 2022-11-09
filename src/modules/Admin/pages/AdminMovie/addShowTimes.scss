@@ -1,6 +1,4 @@
 .add-showtimes {
-	height: 100vh;
-
 	.btn-add-theater {
 		border-radius: 5px;
 		border: none;
@@ -9,26 +7,16 @@
 		color: #fff;
 		padding: 10px;
 		opacity: 1;
-
 		&:hover {
 			opacity: 0.8;
 		}
 	}
-
-	.form-group {
-		.form-label {
-			font-size: 20px;
-			font-weight: 400;
-			color: #fff;
-			margin-bottom: 5px;
-		}
-		.form-select{
-			width: 50%;
-			height: 30px;
-		}
-		.date-1{
-			z-index: 10000000;
-		}
+	.form-select{
+		border: 1px solid #000;
+		height: 30px;
 	}
+	.data-1{
+		border: 1px solid #000;
 
+	}
 }
