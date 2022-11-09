@@ -131,7 +131,7 @@ const AddShowTimes = () => {
 					<div className="form-group mb-4">
 						<label className="form-label d-block">Giá Vé</label>
 						<input
-							className="w-25"
+							className="form-select"
 							placeholder="Chọn giá vé"
 							min={75000}
 							max={200000}
