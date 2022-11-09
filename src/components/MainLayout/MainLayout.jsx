@@ -18,9 +18,10 @@ const MainLayout = () => {
       <Layout.Content >
         <Outlet />
       </Layout.Content>
-      <Layout.Footer >
+      {/* <Layout.Footer style={{width:"100%", height:""}}>
+      </Layout.Footer> */}
         <Footer />
-      </Layout.Footer>
+
     </Layout>
 	);
 };

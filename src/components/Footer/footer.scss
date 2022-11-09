@@ -1,0 +1,122 @@
+.Footer{
+    font-family: "Vibur", sans-serif !important;
+    position: relative;
+    font-size: 16px;
+    color: #000;
+    .row{
+      display: flex;
+      width: 100%;
+    }
+    .col-3{
+      width: 25%;
+    }
+    .navbar-brand {
+      color:#d3db91;
+      font-size: 50px;
+      font-weight: bold;
+      transition: 0.6s;
+
+      &:hover {
+        color: #fff;
+        text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #f09,
+          0 0 82px #f09, 0 0 92px #f09, 0 0 102px #f09, 0 0 151px #f09;
+
+        // color: red;
+      }
+    }
+
+    h3 {
+      font-size: 20px;
+      color: white;
+      font-weight: bolder;
+
+    }
+
+    .partner {
+      @media screen and (max-width: 1200px) {
+        text-align: center;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        margin: 10px 0;
+
+        NavLink {
+          position: relative;
+          color: #b61883;
+          font-size: 20px;
+          text-decoration: none;
+          transition: all 0.5s;
+          padding-bottom: 2px;
+
+          &::after {
+            content: "";
+            height: 2px;
+            width: 0;
+            left: 0;
+            bottom: 0;
+            background-color: #fff;
+            text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #f09,
+              0 0 82px #f09, 0 0 92px #f09, 0 0 102px #f09, 0 0 151px #f09;
+            position: absolute;
+            transition: 0.5s;
+          }
+
+          &:hover {
+            color: #fff;
+            text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #f09,
+              0 0 82px #f09, 0 0 92px #f09, 0 0 102px #f09, 0 0 151px #f09;
+
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-img {
+      justify-content: center;
+      .col {
+        text-align: center;
+        
+        img {
+          box-shadow: 0 0 0 0px #d3db91;
+          border-radius: 50%;
+          /* transition: 0.5s; */
+          width: 50px;
+          height: 50px;
+          margin-right: 10px;
+          transition: all 0.5s;
+
+          &:hover {
+            box-shadow: 0 0 0 3px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #b3d770, 0 0 82px #b5de74, 0 0 92px #bbe889, 0 0 102px #7cff0096, 0 0 151px #d3dd98;
+          }
+
+          @media screen and (max-width: 1199px) {
+            width: 100px;
+            height: 100px;
+          }
+
+          @media screen and (max-width: 575px) {
+            width: 50px;
+            height: 50px;
+          }
+        }
+      }
+    }
+}
+@media screen and (max-width: 1400px) {
+	.ticket {
+		.ticket-main {
+			flex-direction: column;
+
+			.ticket-seat-list {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
